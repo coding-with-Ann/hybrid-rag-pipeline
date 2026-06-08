@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-rag-pipeline"
+version = "0.1.0"
+description = "Production-ready RAG pipeline skeleton with hybrid BM25/vector retrieval."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "llama-index>=0.11.0,<0.13.0",
+  "rank-bm25>=0.2.2,<0.3.0",
+  "numpy>=1.26.0,<3.0.0",
+  "pydantic>=2.7.0,<3.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
